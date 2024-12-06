@@ -448,11 +448,12 @@ body.scroll-enabled {
 .footer-content a {
     color: #1e90ff;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: 0.3s;
 }
 
 .footer-content a:hover {
-    color: #ff6347;
+    transition: 0.3s;
+    color: #77096e;
 }
 
 .separator-line {
