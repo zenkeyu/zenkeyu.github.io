@@ -1,0 +1,110 @@
+<!-- made by @zenkey with love -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>portfolio | @zenkey</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+        <link rel="icon" type="image/png" sizes="32x32" href="logo/1-77fd8372.png">
+    </head>
+<body>
+
+<div class="overlay" id="overlay" onclick="removeOverlay()">
+    click to enter
+</div>
+
+<canvas id="particleCanvas"></canvas>
+
+<audio id="background-music" src="backgroundsong/LUTHER_ALED_EXIT_PRORES.mp3" preload="auto" loop></audio>
+
+<div class="background-image"></div>
+
+<div class="content" id="content">
+
+    <div class="card" id="card">
+        <img src="logo/ee45530cff66720e26ec6447ba7795a4.webp" alt="photo de profil">
+        <h1 id="pseudo"></h1>
+        <div class="bio" id="welcome-message"></div>
+        <hr class="divider">
+
+        <div class="social-container">
+            <div class="social-icons">
+                <a href="https://www.instagram.com/noah_dvye" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.youtube.com/@zenkeyac" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.tiktok.com/@zenkeyac" target="_blank">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+
+        <hr class="divider">
+    </div>
+</div>
+
+<div class="separator-line"></div>
+
+<div class="scroll-section">
+    <h2 class="scroll-effect">À propos de moi</h2>
+    <div class="about-me-container">
+        <div class="about-me-card scroll-effect">
+            <img id="skills-image" src="background/skill-image.png" alt="Skills Image">
+        </div>
+        <div class="about-me-text scroll-effect">
+            <p id="skills-text">J'ai appris le JavaScript en faisant des boostrapers et des scripts JS pour des projets personels.</p>
+            <p id="skills-text">J'ai appris l'HTML et le CSS en faisant ce site web portfolio, ce qui est pas négligeable pour avoir certaines connaissances.</p>
+            <div class="ball"></div>
+        </div>
+    </div>
+
+    <div class="about-me-container second">
+        <div class="about-me-text scroll-effect">
+            <p id="new-text">J'ai également exploré d'autres technologies comme  Node.js, ce qui m'a permis de travailler sur divers projets professionnels comme Minoria qui comptait 50 serveurs et + de 100k d'utilisateurs.</p>
+            <div class="ball"></div>
+        </div>
+        <div class="about-me-card scroll-effect" id="minoria-card">
+            <img id="extra-image" src="background/minoria.png" alt="Nouvelle Image">
+        </div>
+    </div>
+
+    <div class="about-me-container third">
+        <div class="about-me-card scroll-effect">
+            <img id="project-image" src="background/next-project.png" alt="Nouvelle Image Supplémentaire">
+        </div>
+        <div class="about-me-text scroll-effect">
+            <p id="extra-text">Pour le moment, aucun projet en tête, je vais continuer d'expérimenter les langages qui ont été cités ci-dessus pour approfondir mes connaissances.</p>
+            <div class="ball"></div>
+        </div>
+    </div>
+</div>
+
+<div class="separator-line"></div>
+
+<div class="music-toggle" id="music-toggle" onclick="toggleMusic()">
+    <i id="music-icon" class="fa fa-pause"></i>
+</div>
+
+<footer class="footer">
+    <div class="footer-content">
+        <p>© 2024 Portfolio by @zenkey | All Rights Reserved.</p>
+        <p>
+            Made with ❤️
+        </p>
+    </div>
+</footer>
+
+
+<script src="js/index.js"></script>
+
+</body>
+</html>
+<!-- made by @zenkey with love -->
