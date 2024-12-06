@@ -20,9 +20,9 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #C18be0;
+    color: #e0d38b;
     font-size: 3rem;
-    text-shadow: 0 0 42px #C18be0, 0 0 82px #C18be0;
+    text-shadow: 0 0 42px #e0d38b, 0 0 82px #C18be0;
     font-family: "Roboto Mono";
     font-weight: 300;
 }
