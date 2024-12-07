@@ -121,75 +121,6 @@ body.scroll-enabled {
     pointer-events: none;
 }
 
-header.top-nav {
-    position: fixed;
-    top: 5vh;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 30%;
-    height: 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    z-index: 1000;
-    border-radius: 15px;
-    background-color: rgb(36, 36, 36);
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-    
-  header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0 10px;
-  }
-    
-  header .logo {
-    margin-top: -3px;
-    margin-left: -60%;
-    font-size: 1.5rem;
-    text-decoration: none;
-    font-weight: 600;
-    color: white;
-  }
-  
-    header .container img {
-      margin-right: 10px;
-    }
-    
-    header nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      align-items: center;
-    }
-    
-    header nav ul li {
-      position: relative;
-      margin-left: auto;
-    }
-    
-    header nav ul li a {
-      text-decoration: none;
-      color: rgb(255, 255, 255);
-      font-size: 1rem;
-      font-weight: 300;
-      padding: 10px;
-      transition: color 0.3s ease;
-    }
-    
-    header nav ul li a:hover {
-      transform: scale(1.1);
-      border-radius: 15px;
-      border-color: #c972f1cb;
-      background-color: rgba(54, 54, 54, 0.541);
-    }
-    
-
 .content {
     display: none;
     height: 100vh;
@@ -499,7 +430,7 @@ header.top-nav {
     box-shadow: 0 0 10px #c972f1cb;
 }
 
-
+.content,
 .footer {
     width: 100%;
     background-color: rgb(18, 20, 26);
