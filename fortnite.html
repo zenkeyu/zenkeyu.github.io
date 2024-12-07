@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fortnite Stats Viewer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #1c1e21;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+      color: #ff9900;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    input, select {
+      padding: 10px;
+      margin: 5px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #ff9900;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #cc7a00;
+    }
+
+    .stats-container {
+      margin-top: 20px;
+      text-align: center;
+      background: #292b2f;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+    }
+
+    .stat {
+      margin: 10px 0;
+    }
+
+    .error {
+      color: #ff4d4d;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fortnite Stats Viewer</h1>
+
+  <form id="statsForm">
+    <select id="platform" required>
+      <option value="pc">PC</option>
+      <option value="psn">PlayStation</option>
+      <option value="xbl">Xbox</option>
+    </select>
+    <input type="text" id="username" placeholder="Epic Games Username" required />
+    <button type="submit">Get Stats</button>
+  </form>
+
+  <div id="statsContainer" class="stats-container" style="display: none;">
+    <h2>Player Stats</h2>
+    <div id="stats"></div>
+  </div>
+
+  <div id="error" class="error" style="display: none;"></div>
+
+  <script>
+    const API_KEY = "Yc5c1a8d7-1ecd-4ac7-a351-f382fb07318f"; // Remplacez avec votre clé API Tracker.gg
+    const form = document.getElementById("statsForm");
+    const statsContainer = document.getElementById("statsContainer");
+    const statsDiv = document.getElementById("stats");
+    const errorDiv = document.getElementById("error");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const platform = document.getElementById("platform").value;
+      const username = document.getElementById("username").value;
+
+      // Clear previous data
+      statsContainer.style.display = "none";
+      statsDiv.innerHTML = "";
+      errorDiv.style.display = "none";
+      errorDiv.textContent = "";
+
+      try {
+        // Call the Tracker.gg API
+        const response = await fetch(`https://public-api.tracker.gg/v2/fortnite/standard/profile/${platform}/${username}`, {
+          headers: {
+            "TRN-Api-Key": API_KEY
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch stats. Please check the username or platform.");
+        }
+
+        const data = await response.json();
+
+        // Display stats
+        const stats = data.data.segments[0].stats; // Overview stats
+        statsContainer.style.display = "block";
+        statsDiv.innerHTML = `
+          <div class="stat"><strong>Wins:</strong> ${stats.wins.value}</div>
+          <div class="stat"><strong>Kills:</strong> ${stats.kills.value}</div>
+          <div class="stat"><strong>K/D Ratio:</strong> ${stats.kd.value}</div>
+          <div class="stat"><strong>Matches Played:</strong> ${stats.matches.value}</div>
+        `;
+      } catch (err) {
+        errorDiv.style.display = "block";
+        errorDiv.textContent = err.message;
+      }
+    });
+  </script>
+</body>
+</html>
