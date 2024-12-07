@@ -101,15 +101,15 @@ html, body {
 }
 
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: black;
-    flex-direction: column;
+    font-family: Arial, sans-serif;
     height: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    background-color: black;
+    overflow: hidden;
     cursor: url('../cursor/arrowhead.png') 8 8, auto !important;
 }
 
@@ -123,7 +123,7 @@ body {
     text-decoration: none;
 }
 
-.background-image2 {
+.background-image {
     position: absolute;
     top: 0;
     left: 0;
