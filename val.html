@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Valorant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .profile-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .profile-card img {
+            width: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .profile-card h2 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .profile-card p {
+            font-size: 16px;
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            background-color: #fafafa;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-item h3 {
+            margin-bottom: 5px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-card">
+        <img id="avatar" src="https://via.placeholder.com/150" alt="Avatar">
+        <h2 id="username">Nom du Joueur</h2>
+        <p id="rank">Rang : Non défini</p>
+        <p id="last-login">Dernière connexion : Non défini</p>
+
+        <div class="stats">
+            <div class="stat-item">
+                <h3>Kills</h3>
+                <p id="kills">Chargement...</p>
+            </div>
+            <div class="stat-item">
+                <h3>Victoires</h3>
+                <p id="wins">Chargement...</p>
+            </div>
+            <div class="stat-item">
+                <h3>Défaites</h3>
+                <p id="losses">Chargement...</p>
+            </div>
+            <div class="stat-item">
+                <h3>Headshots</h3>
+                <p id="headshots">Chargement...</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p id="update-time">Dernière mise à jour : Chargement...</p>
+        </div>
+    </div>
+
+    <script>
+        // Remplacez cette clé API par la vôtre
+        const apiKey = "c5c1a8d7-1ecd-4ac7-a351-f382fb07318f";
+        const playerName = "opx7x%23TAP/"; // Remplacez par le nom du joueur
+
+        // Fonction pour obtenir les statistiques du joueur
+        async function getPlayerStats() {
+            const url = `https://api.tracker.gg/api/v2/valorant/standard/profile/riot/${playerName}`;
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    'TRN-Api-Key': apiKey
+                }
+            });
+            const data = await response.json();
+            
+            // Mettre à jour les éléments de la page avec les données récupérées
+            const playerData = data.data.segments[0];
+            document.getElementById("username").innerText = playerData.platformInfo.platformUserHandle;
+            document.getElementById("rank").innerText = `Rang : ${playerData.stats.combatScore.displayValue}`;
+            document.getElementById("kills").innerText = playerData.stats.kills.value;
+            document.getElementById("wins").innerText = playerData.stats.wins.value;
+            document.getElementById("losses").innerText = playerData.stats.losses.value;
+            document.getElementById("headshots").innerText = playerData.stats.headshots.value;
+            document.getElementById("update-time").innerText = `Dernière mise à jour : ${new Date().toLocaleString()}`;
+        }
+
+        // Appeler la fonction pour charger les données
+        getPlayerStats();
+    </script>
+
+</body>
+</html>
