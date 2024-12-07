@@ -236,3 +236,9 @@ body {
     transition: 0.3s;
     color: #77096e;
 }
+
+.separator-line {
+    width: 100%;
+    height: 2px;
+    background-color: #77096e;
+}
