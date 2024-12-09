@@ -393,6 +393,12 @@ body.scroll-enabled {
     line-height: 1.6;
 }
 
+.about-me-text a {
+    color: peachpuff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
 .social-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
