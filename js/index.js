@@ -150,18 +150,17 @@ document.addEventListener('mousemove', (e) => {
 const menuToggle = document.querySelector('.menu-toggle');
 const topNav = document.querySelector('header.top-nav');
 const navMenu = document.querySelector('header nav ul');
-const icon = menuToggle.querySelector('i');  // Sélectionne l'icône à l'intérieur de menu-toggle
+const icon = menuToggle.querySelector('i');
 
 menuToggle.addEventListener('click', () => {
     topNav.classList.toggle('active');
     navMenu.classList.toggle('active');
 
-    // Change l'icône du menu
     if (navMenu.classList.contains('active')) {
-        icon.classList.remove('fa-bars');  // Retire l'icône burger
-        icon.classList.add('fa-times');    // Ajoute l'icône croix
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
     } else {
-        icon.classList.remove('fa-times'); // Retire l'icône croix
-        icon.classList.add('fa-bars');     // Ajoute l'icône burger
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
     }
 });
