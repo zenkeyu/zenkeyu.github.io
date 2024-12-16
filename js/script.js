@@ -1,34 +1,16 @@
 // Animation du texte
+/* Script désactivé car remplacé par language.js
 const typingText = document.querySelector('.typing-text');
-const words = ['designer', 'game lover', 'web lover'];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
 
-function typeEffect() {
-    const currentWord = words[wordIndex];
-    
-    if (isDeleting) {
-        typingText.textContent = currentWord.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        typingText.textContent = currentWord.substring(0, charIndex + 1);
-        charIndex++;
-    }
-
-    if (!isDeleting && charIndex === currentWord.length) {
-        isDeleting = true;
-        setTimeout(typeEffect, 2000);
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-        setTimeout(typeEffect, 500);
-    } else {
-        setTimeout(typeEffect, isDeleting ? 100 : 200);
-    }
+function type() {
+    // Code commenté
 }
 
-typeEffect();
+setInterval(type, 100);
+*/
 
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav-links');

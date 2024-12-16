@@ -8,68 +8,75 @@
     <meta content="zenkey's portfolio" property="description">
     <meta content="#FFFFFF" data-react-helmet="true" name="theme-color">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css">
+    <script src="./js/language.js"></script>
 </head>
 <body>
     <header>
         <nav>
-            <a href="#home" class="nav-link">Home</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#work" class="nav-link">My Work</a>
-            <a href="#skills" class="nav-link">Skills</a>
+            <div class="nav-links">
+                <a href="#home" data-translate="home">Home</a>
+                <a href="#about" data-translate="about">About</a>
+                <a href="#skills" data-translate="skills">Skills</a>
+                <div class="language-selector">
+                    <div class="lang-dropdown">
+                        <button class="lang-btn" title="Change language">
+                            <i class="fi fi-gb"></i>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#" onclick="changeLanguage('en')" class="lang-option">
+                                <i class="fi fi-gb"></i>
+                                <span>English</span>
+                            </a>
+                            <a href="#" onclick="changeLanguage('fr')" class="lang-option">
+                                <i class="fi fi-fr"></i>
+                                <span>Français</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
     <main>
         <section id="home" class="hero">
             <div class="hero-text">
-                <h1>web developer</h1>
-                <p class="typing-text"></p>
+                <h1 data-translate="developer-title">développeur web</h1>
+                <p class="typing-text" data-translate="typing-text"></p>
             </div>
         </section>
 
         <section id="about" class="about">
-            <h2>About Me</h2>
+            <h2 data-translate="about-title">À propos de moi</h2>
             <div class="about-content">
                 <div class="text-content">
-                    <p>I am an 18 years old web developer, passionate about creating web experiences for friends or clients.</p>
-                    <p>With a strong focus on user experience and a keen eye for design, I strive to deliver visually stunning and functional websites that meet the needs of my clients.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="work" class="work">
-            <h2>My Work</h2>
-            <div class="work-grid">
-                <div class="work-item">
-                    <img src="./image/a_0cc4ce4d1bac4382099b496494a40190.gif" alt="Project 1">
-                    <div class="work-info">
-                        <h3>Kayro</h3>
-                        <p>Site Web pour le serveur Discord Kayro</p>
-                        <a href="https://kayrodc.github.io" target="_blank" class="project-link">Voir le site</a>
-                    </div>
+                    <p data-translate="about-text-1">Je suis un développeur web de 18 ans, passionné par la création d'expériences web pour mes amis ou clients.</p>
+                    <p data-translate="about-text-2">Avec un fort accent sur l'expérience utilisateur et un œil avisé pour le design, je m'efforce de créer des sites web visuellement impressionnants et fonctionnels qui répondent aux besoins de mes clients.</p>
                 </div>
             </div>
         </section>
 
         <section id="skills" class="skills">
-            <h2>Skills</h2>
+            <h2 data-translate="skills-title">Compétences</h2>
             <div class="skills-container">
                 <div class="skill-category">
-                    <h3>Frontend</h3>
+                    <h3 data-translate="frontend">Frontend</h3>
                     <div class="skill-items">
                         <div class="skill-item">
-                            <span class="skill-name">HTML5</span>
+                            <span class="skill-name" data-translate="html5">HTML5</span>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-progress="45"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">CSS3</span>
+                            <span class="skill-name" data-translate="css3">CSS3</span>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-progress="45"></div>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-name" data-translate="javascript">JavaScript</span>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-progress="75"></div>
                             </div>
@@ -77,10 +84,10 @@
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Backend</h3>
+                    <h3 data-translate="backend">Backend</h3>
                     <div class="skill-items">
                         <div class="skill-item">
-                            <span class="skill-name">Node.js</span>
+                            <span class="skill-name" data-translate="nodejs">Node.js</span>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-progress="45"></div>
                             </div>
@@ -88,10 +95,10 @@
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Tools</h3>
+                    <h3 data-translate="tools">Tools</h3>
                     <div class="skill-items">
                         <div class="skill-item">
-                            <span class="skill-name">VS Code</span>
+                            <span class="skill-name" data-translate="vscode">VS Code</span>
                             <div class="skill-bar">
                                 <div class="skill-progress" data-progress="100"></div>
                             </div>
@@ -110,7 +117,7 @@
                 <a href="https://youtube.com/@zenkeyac" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 zenkey. All rights reserved.</p>
+                <p data-translate="copyright">&copy; 2024 zenkey. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
